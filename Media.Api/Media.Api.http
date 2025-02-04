@@ -4,6 +4,10 @@ GET {{Media_Api_HostAddress}}/
 Accept: application/json
 
 ###
+GET {{Media_Api_HostAddress}}/1
+Accept: application/json
+
+###
 POST {{Media_Api_HostAddress}}
 Accept: application/json
 Content-type: application/json
@@ -15,6 +19,17 @@ Content-type: application/json
 }
 
 
+###
+PUT {{Media_Api_HostAddress}}/1
+Accept: application/json
+Content-type: application/json
+
+{
+  "id": 1,
+  "title": "Sagan om ringen",
+  "author": "J.R.R Tolkien",
+  "pages": 623
+}
 ###
 DELETE {{Media_Api_HostAddress}}/1
 Accept: application/json
