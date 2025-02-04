@@ -1,0 +1,20 @@
+@Media.Api_HostAddress = http://localhost:5255/api/books
+
+GET {{Media.Api_HostAddress}}/
+Accept: application/json
+
+###
+POST {{Media.Api_HostAddress}}
+Accept: application/json
+Content-type: application/json
+
+{
+  "title": "Sagan om ringen",
+  "author": "J.R.R Tolkein",
+  "pages": 623
+}
+
+
+###
+DELETE {{Media.Api_HostAddress}}/1
+Accept: application/json
