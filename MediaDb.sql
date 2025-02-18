@@ -1,0 +1,19 @@
+CREATE DATABASE MediaRegistretDb;
+GO
+
+USE MediaRegistretDb;
+GO
+
+CREATE TABLE Books (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL,
+    Author VARCHAR(255) NOT NULL,
+    Pages INT NOT NULL
+);
+
+CREATE TABLE Movies (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL,
+    Director VARCHAR(255) NOT NULL,
+    Duration INT NOT NULL
+);

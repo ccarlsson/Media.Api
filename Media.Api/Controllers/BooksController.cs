@@ -1,6 +1,7 @@
 ﻿using Media.Api.Contracts;
 using Media.Api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Media.Api.Controllers;
 
@@ -35,6 +36,11 @@ public class BooksController : ControllerBase
   [HttpPost]
   public async Task<IActionResult> Post([FromBody] Book book)
   {
+    if (book is null)
+      return BadRequest();
+    if(book.Author.IsNullOrEmpty() || book.Title.IsNullOrEmpty())
+      return BadRequest("Author and Title are required");
+
     var createdBook = await _bookRepository.AddBookAsync(book);
 
     return CreatedAtRoute("GetBook", new { id = createdBook.Id }, createdBook);

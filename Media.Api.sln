@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80B813CB-83CF-4491-89CA-A73C91ED0A44}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		MediaDb.sql = MediaDb.sql
 	EndProjectSection
 EndProject
 Global

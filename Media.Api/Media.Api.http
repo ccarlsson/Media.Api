@@ -1,35 +1,37 @@
-@Media_Api_HostAddress = http://localhost:5255/api/books
+@Media_Api_HostAddress = http://localhost:5255/api/
+@Books = books
+@Movies = movies
 
-GET {{Media_Api_HostAddress}}/
+GET {{Media_Api_HostAddress}}{{Books}}/
 Accept: application/json
 
 ###
-GET {{Media_Api_HostAddress}}/1
+GET {{Media_Api_HostAddress}}{{Books}}/19
 Accept: application/json
 
 ###
-POST {{Media_Api_HostAddress}}
+POST {{Media_Api_HostAddress}}{{Books}}
 Accept: application/json
 Content-type: application/json
 
 {
   "title": "Sagan om ringen",
   "author": "J.R.R Tolkein",
-  "pages": 623
+  "pages": 6232
 }
 
 
 ###
-PUT {{Media_Api_HostAddress}}/1
+PUT {{Media_Api_HostAddress}}{{Books}}/19
 Accept: application/json
 Content-type: application/json
 
 {
-  "id": 1,
+  "id": 19,
   "title": "Sagan om ringen",
   "author": "J.R.R Tolkien",
   "pages": 623
 }
 ###
-DELETE {{Media_Api_HostAddress}}/1
+DELETE {{Media_Api_HostAddress}}{{Books}}/19
 Accept: application/json
