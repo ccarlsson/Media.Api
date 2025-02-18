@@ -55,8 +55,8 @@ public class SQLBookRepository(IConfiguration configuration) : IBookRepository
     public async Task<IEnumerable<Book>> GetBooksAsync()
     {
         const string query = "SELECT * FROM Books";
-        using var sqlClient = new SqlConnection(_connectionString);
-        using var sqlCommand = new SqlCommand(query, sqlClient);
+        using SqlConnection sqlClient = new(_connectionString);
+        using SqlCommand sqlCommand = new(query, sqlClient);
         await sqlClient.OpenAsync();
         using var reader = await sqlCommand.ExecuteReaderAsync();
         var books = new List<Book>();
