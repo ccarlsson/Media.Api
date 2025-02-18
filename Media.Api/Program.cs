@@ -10,8 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+// Books
 // builder.Services.AddSingleton<IBookRepository, InMemoryBookRepository>();
 builder.Services.AddScoped<IBookRepository, SQLBookRepository>();
+// builder.Services.AddScoped<IBookRepository, DapperBookRepository>(); // Uncomment to use Dapper (doest work atm)
+
+// Movies
 // builder.Services.AddSingleton<IMovieRepository, InMemoryMovieRepository>();
 builder.Services.AddScoped<IMovieRepository, SQLMovieRepository>();
 
